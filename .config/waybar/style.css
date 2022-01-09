@@ -1,0 +1,264 @@
+
+
+* {
+    border: none;
+    border-radius: 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Iosevka;/*, icomoon\ feather; , Helvetica, Arial, sans-serif;*/
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 16px;
+    min-height: 1px;
+}
+
+window#waybar {
+    /*background-color: rgba(31, 26, 31, 1);
+    background-color: rgba(21, 23, 24, 0.85);*/
+    background-color: rgba(0, 0, 0, 0.65);
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/*window#waybar.solo {
+    background-color: #FFFFFF;
+}
+
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+*/
+
+/*window#waybar.empty {
+    background-color: #263238;
+    border: none;
+}*/
+
+#workspaces {
+	padding: 0px 0px 0px 10px;
+	min-width: 0px;
+}
+
+#workspaces button {
+    transition-property: background-color, box-shadow;
+    transition-duration: .1s;
+    padding: 0px 8px;
+    margin: 0px;
+    min-width: 0;
+    background-color: transparent;
+    /*color: #ffffff;
+     Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 -3px shade(mix(@theme_selected_bg_color, #ffffff, 0.2), 0.9);
+}
+
+#workspaces button.focused {
+    /*background-color: #64727D;*/
+    background-color: alpha(#64727D, 0.65);
+    box-shadow: inset 0 -3px shade(mix(@theme_selected_bg_color, #ffffff, 0.2), 0.9);
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#custom-spotify {
+	padding: 0 10px;
+	margin: 0 12px;
+}
+
+#custom-calendar,
+#custom-bluetooth,
+#custom-powersave,
+#custom-media,
+#mode,
+#idle_inhibitor,
+#mpd {
+    padding: 0 7px;
+    margin: 0 5px;
+}
+
+#custom-mic,
+#custom-pulse,
+#tray,
+#custom-powerbutton,
+#custom-gov,
+#custom-vpn,
+#pulseaudio,
+#backlight,
+#network {
+	padding: 0 4px;
+	margin: 0 2px;
+}
+
+
+#cpu,
+#temperature {
+	padding: 0 4px;
+	margin: 0 2px;
+}
+
+#custom-bg {
+	padding: 0 6px;
+	margin: 0 0px;
+}
+
+#custom-powerbutton {
+
+}
+
+#custom-weather {
+	padding: 0 4px;
+	margin: 0 25px 0 6px;
+}
+
+#window {
+	margin: 0 40px;
+    min-width: 320px;
+}
+
+
+#workspaces {
+    margin: 0 4px;
+}
+
+
+#battery {
+	padding: 0 18px 0 5px;
+	margin: 0 18px 0 7px;
+}
+
+#battery.charging {
+    box-shadow: inset 0 -3px shade(mix(@theme_selected_bg_color, #ffffff, 0.2), 0.9);
+}
+
+@keyframes blink {
+    to {
+        box-shadow: inset 0 -3px #ffffff;
+    }
+}
+
+#battery.critical:not(.charging) {
+    /*box-shadow: inset 0 -3px mix(@warning_color, #FF2C29, 0.75);
+    color: #ffffff;*/
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color: #ea7300;
+}
+
+#battery.warning {
+	background-color: transparent;
+	color: #ea7300;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    padding: 0 5px 0 12px;
+}
+
+
+#backlight {
+    padding: 0 15px 0 5px;
+    margin: 0 30px 0 0;
+}
+
+#custom-pulse,
+#pulseaudio {
+    transition-property: color;
+    transition-duration: .5s;
+    padding: 0 2px;
+    margin: 0 7px 0 17px;
+}
+
+
+
+#network {
+    transition-property: color;
+    transition-duration: .5s;
+    /*background-color: #2980b9;*/
+}
+
+#network.disconnected {
+    color: #808080;
+}
+
+#memory {
+    padding: 0 5px 0 5px;
+    margin: 0 45px 0 0;
+}
+
+#temperature.critical {
+    box-shadow: inset 0 -3px mix(@warning_color, #FF2C29, 0.75);
+}
+
+#tray {
+    padding: 0 3px 0 3px;
+}
+
+#custom-spotify {
+    transition-property: box-shadow;
+    transition-duration: .5s;
+}
+
+#custom-spotify.playing {
+    box-shadow: inset 0 -3px shade(mix(@theme_selected_bg_color, #ffffff, 0.2), 0.9);
+	/*border-bottom: 3.5px solid rgba(105, 200, 105, 0.8)*/
+}
+
+#custom-spotify.paused {
+    box-shadow: inset 0 -3px rgba(255, 255, 255, 0.8);
+	/*border-bottom: 3.5px solid #ffffff
+	rgba(180, 180, 180, 0.35)*/
+}
+
+#custom-pulse.yes,
+#pulseaudio.muted {
+    color: #808080;
+	/*border-bottom: 3.5px solid rgba(105, 200, 105, 0.8)*/
+}
+
+#custom-mic.yes {
+    color: #808080;
+	/*border-bottom: 3.5px solid rgba(105, 200, 105, 0.8)*/
+}
+
+#mpd {
+    background-color: #66cc99;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
+
+#language {
+    background: #00b093;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#clock {
+	padding: 0px 10px 0px 0px;
+}

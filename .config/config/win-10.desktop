@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Windows 11
+Type=Application
+Comment=Start Windows VM 
+Exec=/home/rak/.config/sway/scripts/startVM.sh win10
+Icon=archuser-win11
+Path=/usr/bin
+Terminal=false
+StartupNotify=false

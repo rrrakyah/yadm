@@ -1,0 +1,24 @@
+/* Option 1 */
+#TabsToolbar {
+    opacity: 0.0;
+}
+
+#TabsToolbar:hover {
+    opacity: 1.0;
+}
+
+/* Option 2 */
+#TabsToolbar { visibility: collapse !important; }
+
+#navigator-toolbox:hover #TabsToolbar {
+    visibility: visible;
+}
+
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+    display:none;
+}
+
+/*#webrtcIndicator {
+	display:none !important;
+}
+*/
